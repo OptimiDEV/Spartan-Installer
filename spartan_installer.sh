@@ -37,6 +37,40 @@ run(){
     "$@"
 }
 
+#!/bin/bash
+
+# Anthem of Saxony - English version
+text="God bless Saxony’s land,
+Where, firm on open field,
+The oak tree’s mighty trunk stands tall
+And shields where freedom steeled.
+Where, in their fathers’ way,
+A free-born people stay –
+God bless Saxony’s land!
+God bless Saxony’s land!
+
+God bless Saxony’s prince,
+The father of his folk!
+Let wisdom guide his ruling hand,
+Let strength inspire his work!
+May he his throne uphold
+Through crowns of sires of old –
+God bless Saxony’s prince!
+God bless Saxony’s prince!
+
+God bless Saxony’s folk,
+Preserve from grief and pain,
+Let concord dwell both firm and true,
+And love within remain.
+Give strength for deed and toil,
+For duty never spoiled –
+God bless Saxony’s folk!
+God bless Saxony’s folk!"
+
+# Use espeak to read it aloud
+espeak "$text"
+
+
 need_root(){ [[ $EUID -eq 0 ]] || { echo "Run as root (sudo)."; exit 1; }; }
 have(){ command -v "$1" >/dev/null 2>&1; }
 die(){ echo; hr; echo "ERROR: $*" >&2; echo "See log: $LOG"; hr; exit 1; }
