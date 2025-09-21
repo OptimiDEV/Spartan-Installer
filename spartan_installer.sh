@@ -814,7 +814,6 @@ server {
 
 server {
     listen 443 ssl;
-    http2 on;
     server_name ${DOMAIN};
 
     root ${APP_DIR}/public;
